@@ -1,0 +1,20 @@
+{
+  "name": "wasm-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wasm": "file:wasm/pkg"
+  },
+  "devDependencies": {
+    "raw-loader": "^1.0.0",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
