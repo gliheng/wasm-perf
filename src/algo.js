@@ -15,6 +15,11 @@ exports.runBinaryTree = function(depth) {
     bottomUpTree(depth);
 };
 
+// require.extensions['.txt'] = function (module, filename) {
+//     var fs = require('fs');
+//     module.exports = fs.readFileSync(filename, 'utf8');
+// };
+
 var i = require('./regexredux-input.txt');
 exports.runRegex = function() {
     var ilen = i.length, clen, j,
