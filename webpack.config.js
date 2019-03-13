@@ -6,11 +6,11 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: "./dist/",
+    publicPath: 'dist/',
   },
   module: {
     rules: [
       { test: /\.txt$/, use: 'raw-loader' }
     ]
-  }
+  },
 };

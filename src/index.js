@@ -1,44 +1,46 @@
+const wasm = require('wasm');
+const algo = require('./algo');
+const benchmark = require('./benchmark').benchmark;
+
 export function main() {
-    const wasm = require('wasm');
-    const algo = require('./algo');
 
-    console.time('wasm binary tree');
-    wasm.run_binary_tree(24);
-    console.timeEnd('wasm binary tree');
+    benchmark('wasm binary tree', function() {
+        wasm.run_binary_tree(24);
+    });
 
-    console.time('js binary tree');
-    algo.runBinaryTree(24);
-    console.timeEnd('js binary tree');
+    benchmark('js binary tree', function() {
+        algo.runBinaryTree(24);
+    });
 
-    // console.time('wasm regex');
-    // wasm.run_regex();
-    // console.timeEnd('wasm regex');
+    benchmark('wasm nqueen', function() {
+        wasm.run_nqueen(14);
+    });
 
-    // console.time('js regex');
-    // algo.runRegex();
-    // console.timeEnd('js regex');
+    benchmark('js nqueen', function() {
+        algo.runNQueen(14);
+    });
 
-    // console.time('wasm fannkuch');
-    // wasm.run_fannkuch(11);
-    // console.timeEnd('wasm fannkuch');
+    benchmark('wasm fibonacci', function() {
+        wasm.run_fibonacci(34);
+    });
 
-    // console.time('js fannkuch');
-    // algo.runFannkuch(11);
-    // console.timeEnd('js fannkuch');
+    benchmark('js fibonacci', function() {
+        algo.runFibonacci(34);
+    });
 
-    console.time('wasm nqueen');
-    wasm.run_nqueen(14);
-    console.timeEnd('wasm nqueen');
+    // benchmark('wasm regex', function() {
+    //     wasm.run_regex();
+    // });
 
-    console.time('js nqueen');
-    algo.runNQueen(14);
-    console.timeEnd('js nqueen');
+    // benchmark('js regex', function() {
+    //     algo.runRegex();
+    // });
 
-    console.time('wasm fibonacci');
-    wasm.run_fibonacci(34);
-    console.timeEnd('wasm fibonacci');
+    // benchmark('wasm fannkuch', function() {
+    //     wasm.run_fannkuch(11);
+    // });
 
-    console.time('js fibonacci');
-    algo.runFibonacci(34);
-    console.timeEnd('js fibonacci');
+    // benchmark('js fannkuch', function() {
+    //     algo.runFannkuch(11);
+    // });
 }
